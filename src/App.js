@@ -1,26 +1,54 @@
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Button from "./components/Button";
+import Pokemons from "./components/Pokemons";
+import Abilities from "./components/Abilities";
+import CountPokemon from "./components/CountPokemon";
+import PokemonName from "./components/PokemonName";
 
 function App() {
+  const [pokemon, setPokemon] = useState(null);
+  const [count, setCount] = useState(0)
+
+  const handleButtonClick = async () => {
+    const response = await fetch("https://pokeapi.co/api/v2/pokemon/");
+    const data = await response.json();
+    const randomPokemon = Math.floor(Math.random() * data.count) + 1;
+    const pokemonResponse = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/${randomPokemon}`
+    );
+    const pokemonData = await pokemonResponse.json();
+    setPokemon(pokemonData);
+    setCount((oldCount)=> oldCount + 1)
+  };
+
   return (
     <div>
-      <div class="case">
-        <div class="top">
-          <div class="top-bar"></div>
+      <div className="case">
+        <div className="top">
+          <div className="top-bar"></div>
         </div>
-        <div class="screen">
-          <div class="dot"></div>
-          <div class="inner-screen"></div>
+        <div className="screen">
+          <div className="dot"></div>
+          <div className="inner-screen">
+            <div className="pokemon-container">
+              <PokemonName />
+              <Pokemons pokemon={pokemon} />
+              <Abilities pokemon={pokemon} />
+              <CountPokemon count={count} />
+            </div>
+          </div>
         </div>
 
-        <div class="control">
-          <div class="d-pad">
-            <div class="bar"></div>
-            <div class="bar1"></div>
+        <div className="control">
+          <div className="d-pad">
+            <div className="analog"></div>
+            <div className="analog2"></div>
           </div>
-          <button class="buttons"></button>
-          <p class="button-text">catch pokemon</p>
-          <div class="starts"></div>
-          <div class="barrs"></div>
+          <Button onClick={handleButtonClick} />
+          <p className="button-text">catch pokemon</p>
+          <div className="starts"></div>
+          <div className="bars"></div>
         </div>
       </div>
     </div>

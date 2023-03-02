@@ -6,6 +6,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
 }
 .case{
   width: 400px;
@@ -78,7 +80,7 @@
   overflow: hidden;
 }
 
-.bar {
+.analog {
   width: 90px;
   height: 30px;
   background: #264545;
@@ -86,7 +88,7 @@
   margin-top: 30px;
 }
 
-.bar1 {
+.analog2 {
   width: 30px;
   height: 90px;
   background: #264545;
@@ -114,7 +116,7 @@
   box-shadow: 30px 20px 0px #9A9C9E;
 }
 
-.barrs {
+.bars {
   width: 5px;
   height: 40px;
   background: #9A9C9E;
@@ -127,6 +129,37 @@
 .button-text{
   position:relative;
   right:-190px;
-  top:-75px;
-  
+  top:-75px; 
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.pokemon-pic{
+  width: 140px;
+}
+
+
+.list {
+  list-style: none;
+}
+
+.items:nth-child(1) {
+  margin-top: 20px;
+}
+
+
+.pokemon-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.caught {
+  margin-top: 20px;
+  justify-self: flex-end;
+}
+
+.count-color{
+  color: #ed5565;
 }
