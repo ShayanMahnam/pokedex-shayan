@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import Heading from "./components/Heading";
 import Button from "./components/Button";
 import Pokemons from "./components/Pokemons";
 import Abilities from "./components/Abilities";
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <div>
+      <Heading />
       <div className="case">
         <div className="top">
           <div className="top-bar"></div>

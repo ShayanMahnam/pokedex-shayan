@@ -9,6 +9,20 @@
   font-family: 'Press Start 2P', cursive;
   font-size: 12px;
 }
+
+header{
+  text-align: center;
+  font-size: 24px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bigfont{
+  text-align: center;
+  font-size: 24px;
+}
 .case{
   width: 400px;
   height: 700px;
