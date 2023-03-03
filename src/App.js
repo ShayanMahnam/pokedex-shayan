@@ -12,15 +12,20 @@ function App() {
   const [count, setCount] = useState(0);
 
   const handleButtonClick = async () => {
-    const response = await fetch("https://pokeapi.co/api/v2/pokemon/");
-    const data = await response.json();
-    const randomPokemon = Math.floor(Math.random() * data.count) + 1;
-    const pokemonResponse = await fetch(
-      `https://pokeapi.co/api/v2/pokemon/${randomPokemon}`
-    );
-    const pokemonData = await pokemonResponse.json();
-    setPokemon(pokemonData);
-    setCount((oldCount) => oldCount + 1);
+    try {
+       const response = await fetch("https://pokeapi.co/api/v2/pokemon/");
+       const data = await response.json();
+       const randomPokemon = Math.floor(Math.random() * data.count) + 1;
+       const pokemonResponse = await fetch(
+         `https://pokeapi.co/api/v2/pokemon/${randomPokemon}`
+       );
+       const pokemonData = await pokemonResponse.json();
+       setPokemon(pokemonData);
+       setCount((oldCount) => oldCount + 1);
+    } catch (error) {
+      console.log(error)
+    }
+   
   };
 
   return (
