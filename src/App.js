@@ -8,7 +8,7 @@ import PokemonName from "./components/PokemonName";
 
 function App() {
   const [pokemon, setPokemon] = useState(null);
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   const handleButtonClick = async () => {
     const response = await fetch("https://pokeapi.co/api/v2/pokemon/");
@@ -19,7 +19,7 @@ function App() {
     );
     const pokemonData = await pokemonResponse.json();
     setPokemon(pokemonData);
-    setCount((oldCount)=> oldCount + 1)
+    setCount((oldCount) => oldCount + 1);
   };
 
   return (
@@ -32,7 +32,7 @@ function App() {
           <div className="dot"></div>
           <div className="inner-screen">
             <div className="pokemon-container">
-              <PokemonName />
+              <PokemonName name={pokemon?.name} />
               <Pokemons pokemon={pokemon} />
               <Abilities pokemon={pokemon} />
               <CountPokemon count={count} />

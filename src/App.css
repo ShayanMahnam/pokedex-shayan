@@ -147,12 +147,25 @@
   margin-top: 20px;
 }
 
+.items{
+  margin-bottom: 5px;
+}
 
 .pokemon-container {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+.abilities{
+  text-align: center;
+}
+
+.pokemon-name{
+  font-size: 20px;
+  text-align: center;
 }
 
 .caught {

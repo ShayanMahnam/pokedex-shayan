@@ -2,10 +2,14 @@ import React from "react";
 
 function PokemonName({ name }) {
   return (
-    <div className="pokemon-name">
-      <h1>{name}</h1>
+    <div>
+      <h1 className="pokemon-name">{name}</h1>
     </div>
   );
 }
+
+PokemonName.defaultProps = {
+  name: "Pokemon",
+};
 
 export default PokemonName;
