@@ -10,6 +10,7 @@
   font-size: 12px;
 }
 
+
 header{
   text-align: center;
   font-size: 24px;
@@ -171,6 +172,7 @@ header{
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  height: 300px;
 }
 
 .abilities{
@@ -178,7 +180,7 @@ header{
 }
 
 .pokemon-name{
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
 }
 
